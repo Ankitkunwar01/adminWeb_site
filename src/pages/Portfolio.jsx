@@ -14,7 +14,7 @@ import IsolatedModal, {
 } from '../components/common/IsolatedModal';
 import { MoreVertical } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api/portfolio';
+const API_BASE = 'https://backend-website-7ynm.onrender.com/api/portfolio';
 const PAGE_LIMIT = 10;
 
 const PortfolioReleasePage = () => {
@@ -72,12 +72,12 @@ const PortfolioReleasePage = () => {
         title: item.title,
         description: item.description || '',
         imageUrls: item.images.map((url) =>
-          url.startsWith('http') ? url : `http://localhost:5000${url}`
+          url.startsWith('http') ? url : `https://backend-website-7ynm.onrender.com${url}`
         ),
         images: item.images,
         pdfUrls: item.Pdf
           ? item.Pdf.map((pdf) =>
-            pdf.startsWith('http') ? pdf : `http://localhost:5000${pdf}`
+            pdf.startsWith('http') ? pdf : `https://backend-website-7ynm.onrender.com${pdf}`
           )
           : [],
         invest: !!item.invest,

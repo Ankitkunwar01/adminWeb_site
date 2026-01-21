@@ -19,7 +19,7 @@ export const NotificationProvider = ({ children }) => {
   const fetchUnreadCount = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('http://localhost:5000/api/contact/count/unread', {
+      const response = await fetch('https://backend-website-7ynm.onrender.com/api/contact/count/unread', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -35,7 +35,7 @@ export const NotificationProvider = ({ children }) => {
   const fetchNotifications = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://backend-website-7ynm.onrender.com/api/contact', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -55,7 +55,7 @@ export const NotificationProvider = ({ children }) => {
   const markAsRead = async (id) => {
     try {
       const token = localStorage.getItem('adminToken');
-      await fetch(`http://localhost:5000/api/contact/${id}/read`, {
+      await fetch(`https://backend-website-7ynm.onrender.com/api/contact/${id}/read`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`

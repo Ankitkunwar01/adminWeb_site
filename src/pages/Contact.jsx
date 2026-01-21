@@ -24,7 +24,7 @@ const ContactPage = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:5000/api/contact?page=${page}&limit=10`, {
+      const response = await fetch(`https://backend-website-7ynm.onrender.com/api/contact?page=${page}&limit=10`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -56,7 +56,7 @@ const ContactPage = () => {
       if (window.confirm('Are you sure you want to delete this message?')) {
         try {
           const token = localStorage.getItem('adminToken');
-          await fetch(`http://localhost:5000/api/contact/${rowData._id}`, {
+          await fetch(`https://backend-website-7ynm.onrender.com/api/contact/${rowData._id}`, {
             method: 'DELETE',
             headers: {
               'Authorization': `Bearer ${token}`
@@ -73,7 +73,7 @@ const ContactPage = () => {
     if (action === 'markAsRead' && rowData.status === 'new') {
       try {
         const token = localStorage.getItem('adminToken');
-        await fetch(`http://localhost:5000/api/contact/${rowData._id}/read`, {
+        await fetch(`https://backend-website-7ynm.onrender.com/api/contact/${rowData._id}/read`, {
           method: 'PATCH',
           headers: {
             'Authorization': `Bearer ${token}`

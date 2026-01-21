@@ -63,18 +63,18 @@ const DashboardPage = () => {
       
       // Fetch counts from all APIs
       const [mediaRes, portfolioRes,  contactRes] = await Promise.all([
-        fetch('http://localhost:5000/api/media', {
+        fetch('https://backend-website-7ynm.onrender.com/api/media', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
         }),
-        fetch('http://localhost:5000/api/portfolio', {
+        fetch('https://backend-website-7ynm.onrender.com/api/portfolio', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
         }),
         
-        fetch('http://localhost:5000/api/contact', {
+        fetch('https://backend-website-7ynm.onrender.com/api/contact', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
